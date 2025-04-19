@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <form id="loginForm">
+      <div>
+        <h1>Login</h1>
+        <label for="email">Email:</label>
+        <input
+          placeholder="Digite seu email aqui"
+          type="email"
+          name="email"
+          id="email"
+          required
+        />
+      </div>
+      <div>
+        <label for="senha">Senha:</label>
+        <input
+          placeholder="Digite sua senha aqui"
+          type="password"
+          name="senha"
+          id="senha"
+          required
+        />
+      </div>
+      <button id="entrar" type="submit">Entrar</button>
+      <p>Não tem conta? Cadastre-se <a href="cadastro.html">aqui</a></p>
+    </form>
+
+    <script src="js/auth.js"></script>
+  </body>
+</html>

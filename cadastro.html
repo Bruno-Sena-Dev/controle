@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="container">
+      <form id="cadastroForm">
+        <div class="form">
+          <h1>Cadastrar</h1>
+          <label for="nome">Nome:</label>
+          <input
+            placeholder="Digite seu nome"
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            minlength="6"
+          />
+        </div>
+        <div class="form">
+          <label for="email">E-mail:</label>
+          <input
+            placeholder="Digite Seu E-mail"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+        </div>
+        <div class="form">
+          <label for="password">Senha:</label>
+          <input
+            placeholder="Digite Sua Senha"
+            type="password"
+            id="password"
+            name="password"
+            required
+            minlength="6"
+          />
+        </div>
+        <div class="form">
+          <label for="confirmPassword">Confirme a senha:</label>
+          <input
+            placeholder="Confirme Sua Senha"
+            type="password"
+            id="confirmPassword"
+            name="confirmPassword"
+            required
+            minlength="6"
+          />
+        </div>
+        <button id="cadastrar" type="submit">Cadastrar</button>
+        <p>Já tem Login? <a href="login.html">Clique Aqui!</a></p>
+      </form>
+    </div>
+  </body>
+</html>

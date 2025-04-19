@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body{
+  font-family: "Chakra Petch", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #201b2c;
+}
+h1{
+  text-align: center;
+  font-size: 50px;
+  color: #8dc46d;
+  margin-bottom: 20px;
+}
+form{
+  max-width: 90%;
+  background-color: #2f2841;
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+  width: 300px; 
+}
+form div{
+  margin-bottom: 15px;
+}
+form label {
+  color: #8d8d8c;
+  display: block; 
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+form input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 30px;
+}
+input:focus {
+  background-color: #f0f0f0;
+  border-color: #8dc46d; 
+  outline: none; 
+}
+input {
+  transition: 0.3s;
+}
+#entrar{
+  display: block;
+  cursor: pointer;
+  margin: auto;
+  background-color: #8dc46d;
+  color: #ffffff;
+  border-radius: 20px;
+  width: 50px;
+  height: 30px;
+}
+#entrar:hover{
+  background-color: #5d8f44;
+  transition: 0.3s;
+}
+#cadastrar{
+  display: block;
+  cursor: pointer;
+  margin: auto;
+  background-color: #8dc46d;
+  color: #ffffff;
+  border-radius: 20px;
+  width: 100px;
+  height: 30px;
+}
+#cadastrar:hover{
+  background-color: #5d8f44;
+  transition: 0.2s;
+}
+form p{
+  text-align: center;
+  color: #8d8d8c;
+  margin-top: 10px;
+}
+form p a{
+  color: #8dc46d;
+  text-decoration: none;
+}
