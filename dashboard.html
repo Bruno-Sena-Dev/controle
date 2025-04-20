@@ -3,19 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <title>Dashboard - Despesas</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/dashboard.css" />
   </head>
   <body>
     <h1>Dashboard</h1>
     <p>
       Bem-vindo, <span id="userNome"></span>!
-      <button id="logoutBtn">Logout</button>
+      <button id="logoutBtn">Sair</button>
     </p>
-
+    <section id="resumoMes">
+      <h2>Resumo do Mês</h2>
+      <p>Você gastou <span id="totalMes">R$ 0,00</span> este mês.</p>
+    </section>
+    <!-- Formulario para adicionar despesas -->
     <h2>Adicionar Despesa</h2>
     <form id="despesaForm">
       <div>
-        <label for="titulo">Título:</label>
+        <label for="titulo">Titulo:</label>
         <input type="text" name="titulo" id="titulo" required />
       </div>
       <div>
@@ -26,12 +31,62 @@
         <label for="data">Data:</label>
         <input type="date" name="data" id="data" required />
       </div>
+      <div>
+        <label for="categoria">Categoria:</label>
+        <select name="categoria" id="categoria" required>
+          <option value="Alimentação">Alimentação</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Lazer">Lazer</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
+      <div>
+        <label for="observacao">Observação:</label>
+        <textarea name="observacao" id="observacao" rows="3"></textarea>
+      </div>
       <button type="submit">Adicionar Despesa</button>
     </form>
 
+    <!-- Filtros -->
+    <h2>Filtrar Despesas</h2>
+    <form id="filtroForm">
+      <div>
+        <label for="filtroTitulo">Título:</label>
+        <input type="text" name="filtroTitulo" id="filtroTitulo" />
+      </div>
+      <div>
+        <label for="filtroCategoria">Categoria:</label>
+        <select name="filtroCategoria" id="filtroCategoria">
+          <option value="">Todas</option>
+          <option value="Alimentação">Alimentação</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Lazer">Lazer</option>
+          <option value="Outros">Outros</option>
+        </select>
+      </div>
+      <div>
+        <label for="filtroDataInicio">Data Inicio:</label>
+        <input type="date" name="filtroDataInicio" id="filtroDataInicio" />
+      </div>
+      <div>
+        <label for="filtroDataFim">Data Fim:</label>
+        <input type="date" name="filtroDataFim" id="filtroDataFim" />
+      </div>
+      <button type="submit">Filtrar</button>
+    </form>
     <h2>Lista de Despesas</h2>
-    <ul id="listaDespesas"></ul>
-
+    <table id="listaDespesas">
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Valor</th>
+          <th>Categoria</th>
+          <th>Data</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
     <script src="js/dashboard.js"></script>
   </body>
 </html>

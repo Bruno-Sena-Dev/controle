@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {  //verifica que a pagina html foi carregada
+document.addEventListener("DOMContentLoaded", () => { //verifica que a pagina html foi carregada
     const cadastroForm = document.getElementById("cadastroForm"); //verifica se o formulario de cadastro existe
   
     if (cadastroForm) { 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {  //verifica que a pagina h
           return;
         }
 
-        let usuarios = JSON.parse(localStorange.getItem("usuarios")) || []; //verifica se existe usuarios cadastrados no localStorage
+        let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; //verifica se existe usuarios cadastrados no localStorage
         if (usuarios.some((user) => user.email === email)) {
           alert("Email já cadastrado!");
           return;
@@ -35,15 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {  //verifica que a pagina h
           window.location.href = "login.html";
       });
     }
-    function hashPassword(password) {
-      let hash = 0;
-      for (let i = 0; i < password.length; i++) {
-        const char = password.charCodeAt(i);
-        hash = (hash << 5) - hash + char; // Operação bitwise para gerar o hash
-        hash = hash & hash; // Converte para um número de 32 bits
-      }
-      return hash.toString(16); // Converte o hash para hexadecimal
-    }
+    async function hashPassword(password) { 
+      const encoder = new TextEncoder(); 
+      const data = encoder.encode(password); 
+      const hashBuffer = await crypto.subtle.digest("SHA-256", data); 
+      const hashArray = Array.from(new Uint8Array(hashBuffer)); 
+      const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join(""); 
+      return hashHex; }
   
     const loginForm = document.getElementById("loginForm");
   
@@ -57,8 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {  //verifica que a pagina h
   
         let usuarios = JSON.parse(localStorage.getItem("usuarios")) || []; //busca os usuarios cadastrados e se nao tiver volta null
         const usuario = usuarios.find(
-          (user) => user.email === email && user.senha === senhaHash
-        );
+          (user) => user.email === email && user.senha === senhaHash);
         if (!usuario) {
           alert("Credenciais inválidas!");
           return;
