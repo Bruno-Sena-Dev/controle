@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const listaDespesas = document.querySelector("#listaDespesas tbody");
   const totalMes = document.getElementById("totalMes");
 
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("loggedUser"); 
+    window.location.href = "login.html"; // volta pra pagina de login
+  });
+
   function obterDespesas() {
       return JSON.parse(localStorage.getItem("despesas")) || [];
   }
@@ -96,9 +101,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function removerDespesa(index) {
     if (confirm("Deseja realmente excluir esta despesa?")) {
         despesas.splice(index, 1); // Remove do array
-        salvarDespesas(despesas); // Atualiza o localStorage
-        atualizarTotalMes(); // Atualiza o total do mês
-        renderizarTabela(); // Re-renderiza a tabela
+        salvarDespesas(despesas); 
+        atualizarTotalMes(); 
+        renderizarTabela(); 
     }
 }
 window.removerDespesa = removerDespesa;
