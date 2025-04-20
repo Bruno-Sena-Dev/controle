@@ -4,46 +4,42 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-  
 body{
     font-family: "Chakra Petch", sans-serif;
     background-color: #201b2c;
-    color: #ffffff;
+    color: #8d8d8c;
     line-height: 1.6;
-    margin: 20px;
 }
-  
-  /* Cabeçalho */
+  /* header */
 h1{
     text-align: center;
     color: #8dc46d;
     margin-bottom: 20px;
 }
-  
 p{
     text-align: center;
     margin-bottom: 20px;
 }
-  
 button{
-    background-color: #8dc46d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+    display: block;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-}
-  
+    margin: auto;
+    background-color: #8dc46d;
+    color: #ffffff;
+    border-radius: 20px;
+    width: 50px;
+    height: 30px;
+} 
 button:hover {
-    background-color: #45a049;
+    background-color: #5d8f44;
+    transition: 0.3s;
 }
-  /* Formulário */
+  /* furmulario */
 form{
     background: #2f2841;
     padding: 20px;
     margin: 20px auto;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     max-width: 500px;
 }
@@ -59,7 +55,7 @@ form input,form select,form textarea{
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 14px;
 }
 form button{
@@ -67,7 +63,7 @@ form button{
     padding: 10px;
     font-size: 16px;
 }
-  /* Lista de Despesas */
+  /* lista de despesas */
 h2{
     text-align: center;
     color: #ffffff;
@@ -84,29 +80,29 @@ ul#listaDespesas li {
     background: #fff;
     margin-bottom: 10px;
     padding: 15px;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-ul#listaDespesas li span {
+ul#listaDespesas li span{
     font-weight: bold;
 }
   
-ul#listaDespesas li button {
+ul#listaDespesas li button{
     background-color: #f44336;
     padding: 5px 10px;
     font-size: 14px;
-    border-radius: 5px;
+    border-radius: 20px;
 }
   
-ul#listaDespesas li button:hover {
+ul#listaDespesas li button:hover{
     background-color: #d32f2f;
 }
   
-    /* Responsividade */
-@media (max-width: 768px) {
+    /* Responsividade para telas menmores */
+@media (max-width: 768px){
     body {
       margin: 10px;
 }

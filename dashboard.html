@@ -21,11 +21,24 @@
     <form id="despesaForm">
       <div>
         <label for="titulo">Titulo:</label>
-        <input type="text" name="titulo" id="titulo" required />
+        <input
+          placeholder="Digite o título da despesa"
+          type="text"
+          name="titulo"
+          id="titulo"
+          required
+        />
       </div>
       <div>
         <label for="valor">Valor:</label>
-        <input type="number" name="valor" id="valor" required step="0.01" />
+        <input
+          placeholder="valor da despesa"
+          type="number"
+          name="valor"
+          id="valor"
+          required
+          step="0.01"
+        />
       </div>
       <div>
         <label for="data">Data:</label>
@@ -42,17 +55,26 @@
       </div>
       <div>
         <label for="observacao">Observação:</label>
-        <textarea name="observacao" id="observacao" rows="3"></textarea>
+        <textarea
+          placeholder="Observação (OPCIONAL)"
+          name="observacao"
+          id="observacao"
+          rows="3"
+        ></textarea>
       </div>
       <button type="submit">Adicionar Despesa</button>
     </form>
-
-    <!-- Filtros -->
+    <!-- filtrar -->
     <h2>Filtrar Despesas</h2>
     <form id="filtroForm">
       <div>
-        <label for="filtroTitulo">Título:</label>
-        <input type="text" name="filtroTitulo" id="filtroTitulo" />
+        <label for="filtroTitulo">Titulo:</label>
+        <input
+          placeholder="Digite o título da despesa"
+          type="text"
+          name="filtroTitulo"
+          id="filtroTitulo"
+        />
       </div>
       <div>
         <label for="filtroCategoria">Categoria:</label>
